@@ -2,26 +2,23 @@ import React, { Component } from 'react';
 import {
   View,
   Text,
-  TouchableOpacity,
  } from 'react-native';
 
-import Icon from 'react-native-vector-icons/Ionicons';
 import NavigationBar from 'react-native-navbar';
-import Colors from '../styles/colors';
-import { globals } from '../styles';
+import { colors, globals } from '../../styles';
 
-export default class Line extends Component{
+export default class InfoView extends Component {
   constructor(){
     super();
   }
 
   render(){
-    let titleConfig = { title: 'Info', tintColor: '#fff' };
+    let titleConfig = { title: 'Info', tintColor: colors.primaryColorText };
     return (
       <View style={globals.flexContainer}>
         <NavigationBar
           title={titleConfig}
-          tintColor={Colors.brandPrimary}
+          tintColor={colors.primaryColor}
         />
         <View style={globals.flexCenter}>
           <Text style={globals.h2}>
