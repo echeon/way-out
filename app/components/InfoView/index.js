@@ -4,7 +4,7 @@ import {
   Text,
  } from 'react-native';
 
-import NavigationBar from 'react-native-navbar';
+import NavigationBar from '../shared/NavigationBar';
 import { colors, globals } from '../../styles';
 
 export default class InfoView extends Component {
@@ -13,13 +13,9 @@ export default class InfoView extends Component {
   }
 
   render(){
-    let titleConfig = { title: 'Info', tintColor: colors.primaryColorText };
     return (
       <View style={globals.flexContainer}>
-        <NavigationBar
-          title={titleConfig}
-          tintColor={colors.primaryColor}
-        />
+        <NavigationBar title='Info' />
         <View style={globals.flexCenter}>
           <Text style={globals.h2}>
             This is information page

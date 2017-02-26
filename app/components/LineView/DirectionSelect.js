@@ -4,42 +4,43 @@ import {
   Text,
   TouchableOpacity,
  } from 'react-native';
-
-import Icon from 'react-native-vector-icons/Ionicons';
-import NavigationBar from 'react-native-navbar';
 import { colors, globals } from '../../styles';
+import NavigationBar from '../shared/NavigationBar'
+import BackButton from '../shared/BackButton'
 
 export default class DirectionSelect extends Component {
   constructor(){
     super();
     this.goBack = this.goBack.bind(this)
+    this.visitStationSelect = this.visitStationSelect.bind(this)
   }
 
   goBack(){
-    this.props.navigator.pop();
+    this.props.navigator.pop()
+  }
+
+  visitStationSelect() {
+    this.props.navigator.push({ name: 'StationSelect' })
   }
 
   render(){
+    const directions = ['Uptown', 'Downtown']
 
-    const BackButton = ({ handlePress }) => (
-      <TouchableOpacity onPress={handlePress} style={globals.pa1}>
-        <Icon name='ios-arrow-back' size={25} color='white' />
-      </TouchableOpacity>
-    );
-
-    let titleConfig = { title: 'Direction', tintColor: '#fff' };
     return (
-      <View style={globals.flexContainer}>
+      <View style={[globals.flexContainer, {marginBottom: 49}]}>
         <NavigationBar
-          title={titleConfig}
-          tintColor={colors.primaryColor}
+          title='Direction'
           leftButton={<BackButton handlePress={this.goBack}/>}
         />
-        <View style={globals.flexCenter}>
-          <Text style={globals.h2}>
-            You can choose subway direction here
-          </Text>
-        </View>
+      {directions.map(direction => {
+        return (
+          <TouchableOpacity onPress={this.visitStationSelect} style={[globals.flexCenter, {borderWidth: 2, borderColor: 'red'}]}>
+            <Text style={globals.h2}>
+              {direction}
+            </Text>
+          </TouchableOpacity>
+        )
+      })}
       </View>
     )
   }

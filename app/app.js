@@ -5,6 +5,8 @@ import { globals } from './styles'
 import InfoView from './components/InfoView'
 import LineView from './components/LineView'
 
+console.disableYellowBox = true;
+
 export default class App extends Component {
   constructor() {
     super()

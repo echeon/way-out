@@ -7,9 +7,9 @@ import {
  } from 'react-native'
 
 import Icon from 'react-native-vector-icons/Ionicons'
-import NavigationBar from 'react-native-navbar'
 import { colors, globals } from '../../styles'
 import lines from '../../data/trains'
+import NavigationBar from '../shared/NavigationBar'
 
 export default class LineSelect extends Component{
   constructor(){
@@ -44,13 +44,10 @@ export default class LineSelect extends Component{
 
     return (
       <View style={globals.flexContainer}>
-        <NavigationBar
-          title={titleConfig}
-          tintColor={colors.primaryColor}
-        />
-        <ScrollView>
+        <NavigationBar title='Line' />
+        <View style={{marginBottom: 80, borderWidth: 2, borderColor: 'red'}}>
           {lines.map(line => <LineListItem line={line} />)}
-        </ScrollView>
+        </View>
       </View>
     )
   }
