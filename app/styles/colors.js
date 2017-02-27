@@ -1,6 +1,6 @@
 export const colors = {
   accentColor: '#8BC34A',
-  dividerColor: '#BDBDBD',
+  dividerColor: '#DDDDDD',
   primaryColor: '#3F51B5',
   primaryColorLight: '#C5CAE9',
   primaryColorDark: '#303F9F',

@@ -3,7 +3,70 @@ import { Dimensions, StyleSheet } from 'react-native';
 
 const { height: deviceHeight, width: deviceWidth } = Dimensions.get('window');
 
+const margins = {
+  ma0:  { margin: 0 },
+  ma5:  { margin: 5 },
+  ma10: { margin: 10 },
+  mh0:  { marginHorizontal: 0 },
+  mh5:  { marginHorizontal: 5 },
+  mh10: { marginHorizontal: 10 },
+  mv0:  { marginVertical: 0 },
+  mv5:  { marginVertical: 5 },
+  mv10: { marginVertical: 10 },
+  mt0:  { marginTop: 0 },
+  mt5:  { marginTop: 5 },
+  mt10: { marginTop: 10 },
+  mr0:  { marginRight: 0 },
+  mr5:  { marginRight: 5 },
+  mr10: { marginRight: 10 },
+  mb0:  { marginBottom: 0 },
+  mb5:  { marginBottom: 5 },
+  mb10: { marginBottom: 10 },
+  ml0:  { marginLeft: 0 },
+  ml5:  { marginLeft: 5 },
+  ml10: { marginLeft: 10 },
+}
+
+const paddings = {
+  pa0:  { padding: 0 },
+  pa5:  { padding: 5 },
+  pa10: { padding: 10 },
+  ph0:  { paddingHorizontal: 0 },
+  ph5:  { paddingHorizontal: 5 },
+  ph10: { paddingHorizontal: 10 },
+  pv0:  { paddingVertical: 0 },
+  pv5:  { paddingVertical: 5 },
+  pv10: { paddingVertical: 10 },
+  pt0:  { paddingTop: 0 },
+  pt5:  { paddingTop: 5 },
+  pt10: { paddingTop: 10 },
+  pr0:  { paddingRight: 0 },
+  pr5:  { paddingRight: 5 },
+  pr10: { paddingRight: 10 },
+  pb0:  { paddingBottom: 0 },
+  pb5:  { paddingBottom: 5 },
+  pb10: { paddingBottom: 10 },
+  pl0:  { paddingLeft: 0 },
+  pl5:  { paddingLeft: 5 },
+  pl10: { paddingLeft: 10 },
+}
+
+const headings = {
+  h1: { fontSize: 40 },
+  h2: { fontSize: 34 },
+  h3: { fontSize: 28 },
+  h4: { fontSize: 22 },
+  h5: { fontSize: 16 },
+}
+
 export const globals = StyleSheet.create({
+  ...margins,
+  ...paddings,
+  ...headings,
+  mainContainer: {
+    flex: 1,
+    backgroundColor: '#000'
+  },
   flex: {
     flex: 1
   },
@@ -23,58 +86,6 @@ export const globals = StyleSheet.create({
   },
   lightText: {
     color: 'white'
-  },
-  h2: {
-    fontSize: 28,
-    fontWeight: '700',
-  },
-  h4: {
-    fontSize: 20
-  },
-  h5: {
-    fontSize: 16
-  },
-  pv1: {
-    paddingVertical: 10
-  },
-  ph1: {
-    paddingHorizontal: 10
-  },
-  pa1: {
-    padding: 10
-  },
-  pa2: {
-    padding: 20
-  },
-  ph2: {
-    paddingHorizontal: 20
-  },
-  ma1: {
-    margin: 10
-  },
-  mt1: {
-    marginTop: 10
-  },
-  mv2: {
-    marginVertical: 20
-  },
-  mb1: {
-    marginBottom: 10
-  },
-  mr1: {
-    marginRight: 10
-  },
-  mh1: {
-    marginHorizontal: 10
-  },
-  mh2: {
-    marginHorizontal: 20
-  },
-  mv1: {
-    marginVertical: 10
-  },
-  mb2: {
-    marginBottom: 20
   },
   button: {
     alignItems: 'center',

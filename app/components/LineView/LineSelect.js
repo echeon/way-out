@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import {
   View,
   ScrollView,
+  ListView,
   Text,
   TouchableOpacity,
  } from 'react-native'
 
 import Icon from 'react-native-vector-icons/Ionicons'
-import { colors, globals } from '../../styles'
+import { colors, globals, subwaySymbols } from '../../styles'
 import lines from '../../data/trains'
 import NavigationBar from '../shared/NavigationBar'
 
@@ -23,31 +24,38 @@ export default class LineSelect extends Component{
 
   render() {
     const LineListItem = ({line}) => (
-      <View style={{flexDirection: 'row'}}>
+      <View style={[globals.pa5, globals.flexContainer, globals.row, {borderBottomWidth: 1, borderColor: colors.dividerColor}]}>
         {line.trains.map(train => (
-          <SubwaySymbol name={train.name} color={line.color} textColor={line.textColor} />
+          <SubwaySymbol
+            key={`${train.name}-train`}
+            name={train.name}
+            color={line.color}
+            textColor={line.textColor} />
         ))}
       </View>
     )
 
     const SubwaySymbol = ({name, color, textColor}) => (
       <TouchableOpacity
-        key={`${name}-train`}
         onPress={this.visitDirectionSelect}
-        style={{backgroundColor: color, margin: 5, height: 50, width: 50, borderRadius: 50, justifyContent: 'center'}}
+        style={[subwaySymbols.button, {backgroundColor: color}]}
       >
-        <Text style={{textAlign: 'center', fontSize: 25, fontWeight: 'bold', color: textColor, backgroundColor: 'transparent'}}>{name}</Text>
+        <Text style={[subwaySymbols.text, {color: textColor}]}>{name}</Text>
       </TouchableOpacity>
     )
 
-    let titleConfig = { title: 'Line', tintColor: colors.primaryColorText };
-
     return (
-      <View style={globals.flexContainer}>
+      <View style={globals.mainContainer}>
         <NavigationBar title='Line' />
-        <View style={{marginBottom: 80, borderWidth: 2, borderColor: 'red'}}>
-          {lines.map(line => <LineListItem line={line} />)}
+        <View style={{height: 20, backgroundColor: 'yellow'}}>
+          <Text>Select the train</Text>
         </View>
+        <ScrollView
+          contentInset={{top: 0, left: 0, bottom: 49, right: 0}}
+          automaticallyAdjustContentInsets={false}
+        >
+          {lines.map(line => <LineListItem key={line.name} line={line} />)}
+        </ScrollView>
       </View>
     )
   }

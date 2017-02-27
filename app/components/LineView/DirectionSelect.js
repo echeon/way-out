@@ -32,15 +32,17 @@ export default class DirectionSelect extends Component {
           title='Direction'
           leftButton={<BackButton handlePress={this.goBack}/>}
         />
-      {directions.map(direction => {
-        return (
-          <TouchableOpacity onPress={this.visitStationSelect} style={[globals.flexCenter, {borderWidth: 2, borderColor: 'red'}]}>
-            <Text style={globals.h2}>
-              {direction}
-            </Text>
-          </TouchableOpacity>
-        )
-      })}
+      <View style={globals.flexContainer}>
+          {directions.map(direction => {
+            return (
+              <TouchableOpacity key={direction} onPress={this.visitStationSelect} style={globals.flexCenter}>
+                <Text style={globals.h2}>
+                  {direction}
+                </Text>
+              </TouchableOpacity>
+            )
+          })}
+        </View>
       </View>
     )
   }

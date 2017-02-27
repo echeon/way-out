@@ -1,6 +1,79 @@
 import { colors } from '../styles'
 
+const trains = [
+  {}
+]
 export default [
+  {
+    name: 'IRT Broadway – Seventh Avenue Line',
+    color: colors.subwayRed,
+    textColor: '#FFFFFF',
+    trains: [
+      {
+        name: '1',
+        directions: ['Uptown', 'Downtown'],
+        numCars: 10,
+        numDoorsPerCar: 3,
+        stations: [
+          {
+            name: 'Station One',
+            destinations: [
+              {
+                name: 'transfer to 4 train',
+                uptown: [3, 2],
+                downtown: [8, 2],
+              }
+            ],
+
+
+            // I need information
+            // - which direction is this?
+            // - which door to use
+            // - destination
+          },
+          {
+            name: 'Station Two',
+          }
+        ],
+      },
+      {
+        name: '2',
+      },
+      {
+        name: '3',
+      },
+    ],
+  },
+  {
+    name: 'IRT Lexington Avenue Line',
+    color: colors.subwayGreen,
+    textColor: '#FFFFFF',
+    trains: [
+      {
+        name: '4',
+        color: colors.subwayGreen,
+      },
+      {
+        name: '5',
+        color: colors.subwayGreen,
+      },
+      {
+        name: '6',
+        color: colors.subwayGreen,
+      },
+    ],
+  },
+  {
+    name: 'IRT Flushing Line',
+    color: colors.subwayPurple,
+    textColor: '#FFFFFF',
+    trains: [
+      {
+        name: '7',
+        color: colors.subwayPurple,
+      },
+    ],
+  },
   {
     name: 'IND Eighth Avenue Line',
     color: colors.subwayBlue,
@@ -97,60 +170,6 @@ export default [
       {
         name: 'W',
         color: colors.subwayYellow,
-      },
-    ],
-  },
-  {
-    name: 'IRT Broadway – Seventh Avenue Line',
-    color: colors.subwayRed,
-    textColor: '#FFFFFF',
-    trains: [
-      {
-        name: '1',
-        color: colors.subwayRed,
-        directions: ['Uptown', 'Downtown'],
-        stops: [
-          'stop1',
-          'stop2',
-        ],
-      },
-      {
-        name: '2',
-        color: colors.subwayRed,
-      },
-      {
-        name: '3',
-        color: colors.subwayRed,
-      },
-    ],
-  },
-  {
-    name: 'IRT Lexington Avenue Line',
-    color: colors.subwayGreen,
-    textColor: '#FFFFFF',
-    trains: [
-      {
-        name: '4',
-        color: colors.subwayGreen,
-      },
-      {
-        name: '5',
-        color: colors.subwayGreen,
-      },
-      {
-        name: '6',
-        color: colors.subwayGreen,
-      },
-    ],
-  },
-  {
-    name: 'IRT Flushing Line',
-    color: colors.subwayPurple,
-    textColor: '#FFFFFF',
-    trains: [
-      {
-        name: '7',
-        color: colors.subwayPurple,
       },
     ],
   },

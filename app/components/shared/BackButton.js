@@ -6,7 +6,7 @@ import { globals } from '../../styles';
 const BackButton = ({ handlePress }) => (
   <TouchableOpacity
     onPress={handlePress}
-    style={globals.pa1}
+    style={globals.pa10}
   >
     <Icon name='ios-arrow-back' size={25} color='white' />
   </TouchableOpacity>

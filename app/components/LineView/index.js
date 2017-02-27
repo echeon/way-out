@@ -7,6 +7,7 @@ import { colors, globals } from '../../styles'
 import LineSelect from './LineSelect'
 import DirectionSelect from './DirectionSelect'
 import StationSelect from './StationSelect'
+import ResultView from './ResultView'
 
 export default class LineView extends Component{
   constructor(){
@@ -27,6 +28,8 @@ export default class LineView extends Component{
               return <DirectionSelect navigator={navigator}/>
             case 'StationSelect':
               return <StationSelect navigator={navigator}/>
+            case 'ResultView':
+              return <ResultView navigator={navigator}/>
           }
         }}
       />
