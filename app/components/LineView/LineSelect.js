@@ -49,9 +49,25 @@ export default class LineSelect extends Component{
       <View style={globals.flexContainer}>
         <NavigationBar title='Line' />
         <InstructionBar prompt='Select the train' />
-        <ScrollView automaticallyAdjustContentInsets={false}>
-          {lines.map(line => <LineListItem key={line.name} line={line} />)}
-        </ScrollView>
+        <View style={[globals.flex, globals.row]}>
+          <ScrollView
+            contentContainerStyle={[globals.row, {flexWrap: 'wrap'}]}
+            automaticallyAdjustContentInsets={false}>
+            {lines.map(line => {
+              return (
+                line.trains.map(train => {
+                  return (
+                    <SubwaySymbol
+                      key={`${train.name}-train`}
+                      name={train.name}
+                      color={line.color}
+                      textColor={line.textColor} />
+                  )
+                })
+              )
+            })}
+          </ScrollView>
+        </View>
       </View>
     )
   }

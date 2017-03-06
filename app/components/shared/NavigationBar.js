@@ -4,7 +4,7 @@ import { colors } from '../../styles'
 
 export default ({title, leftButton, rightButton}) => {
   const titleConfig = {
-    title,
+    title: title.toUpperCase(),
     tintColor: colors.primaryColorText,
   }
 

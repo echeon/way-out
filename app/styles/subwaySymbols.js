@@ -5,7 +5,7 @@ const { height: deviceHeight, width: deviceWidth } = Dimensions.get('window');
 
 export const subwaySymbols = StyleSheet.create({
   button: {
-    margin: 5,
+    margin: 10,
     height: 50,
     width: 50,
     borderRadius: 50,
