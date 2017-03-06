@@ -17,6 +17,8 @@ export const colors = {
   subwayRed: '#EE352E',
   subwayGreen: '#00933C',
   subwayPurple: '#B933AD',
+  white: '#FFFFFF',
+  black: '#000000',
 }
 
 export default colors

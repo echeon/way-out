@@ -17,7 +17,7 @@ export default class LineView extends Component{
   render(){
     return (
       <Navigator
-        style={globals.flex}
+        style={globals.mainContainer}
         initialRoute={{ name: 'LineSelect' }}
         configureScene={(route, routeStack) => Navigator.SceneConfigs.PushFromRight}
         renderScene={(route, navigator) => {

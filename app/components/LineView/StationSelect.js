@@ -5,17 +5,17 @@ import {
   TouchableOpacity,
  } from 'react-native';
 import { colors, globals } from '../../styles';
-import NavigationBar from '../shared/NavigationBar'
-import BackButton from '../shared/BackButton'
+import NavigationBar from '../shared/NavigationBar';
+import BackButton from '../shared/BackButton';
 
 export default class StationSelect extends Component {
-  constructor(){
+  constructor() {
     super();
     this.goBack = this.goBack.bind(this)
     this.visitResult = this.visitResult.bind(this)
   }
 
-  goBack(){
+  goBack() {
     this.props.navigator.pop();
   }
 
@@ -23,7 +23,7 @@ export default class StationSelect extends Component {
     this.props.navigator.push({ name: 'ResultView' })
   }
 
-  render(){
+  render() {
     const stations = [
       'stop1',
       'stop2',

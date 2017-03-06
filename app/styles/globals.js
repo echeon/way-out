@@ -65,7 +65,8 @@ export const globals = StyleSheet.create({
   ...headings,
   mainContainer: {
     flex: 1,
-    backgroundColor: '#000'
+    backgroundColor: '#EEEEEE',
+    marginBottom: 49,
   },
   flex: {
     flex: 1
@@ -77,7 +78,6 @@ export const globals = StyleSheet.create({
   },
   flexContainer: {
     flex: 1,
-    backgroundColor: 'white'
   },
   row: {
     flexDirection: 'row',

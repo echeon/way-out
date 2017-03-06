@@ -11,6 +11,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import { colors, globals, subwaySymbols } from '../../styles'
 import lines from '../../data/trains'
 import NavigationBar from '../shared/NavigationBar'
+import InstructionBar from '../shared/InstructionBar'
 
 export default class LineSelect extends Component{
   constructor(){
@@ -45,15 +46,10 @@ export default class LineSelect extends Component{
     )
 
     return (
-      <View style={globals.mainContainer}>
+      <View style={globals.flexContainer}>
         <NavigationBar title='Line' />
-        <View style={{height: 20, backgroundColor: 'yellow'}}>
-          <Text>Select the train</Text>
-        </View>
-        <ScrollView
-          contentInset={{top: 0, left: 0, bottom: 49, right: 0}}
-          automaticallyAdjustContentInsets={false}
-        >
+        <InstructionBar prompt='Select the train' />
+        <ScrollView automaticallyAdjustContentInsets={false}>
           {lines.map(line => <LineListItem key={line.name} line={line} />)}
         </ScrollView>
       </View>

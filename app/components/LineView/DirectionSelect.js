@@ -27,7 +27,7 @@ export default class DirectionSelect extends Component {
     const directions = ['Uptown', 'Downtown']
 
     return (
-      <View style={[globals.flexContainer, {marginBottom: 49}]}>
+      <View style={globals.flexContainer}>
         <NavigationBar
           title='Direction'
           leftButton={<BackButton handlePress={this.goBack}/>}

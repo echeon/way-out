@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { TabBarIOS } from 'react-native'
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon from 'react-native-vector-icons/Ionicons';
 import { globals } from '../styles'
 import InfoView from './InfoView'
 import LineView from './LineView'
@@ -21,7 +21,7 @@ export default class Landing extends Component {
         <Icon.TabBarItemIOS
           title=''
           selected={this.state.selectedTab === 'LineView'}
-          iconName='directions-subway'
+          iconName='ios-subway'
           onPress={() => this.setState({ selectedTab: 'LineView' })}
         >
           <LineView />
@@ -29,7 +29,7 @@ export default class Landing extends Component {
         <Icon.TabBarItemIOS
           title=''
           selected={this.state.selectedTab === 'InfoView'}
-          iconName='info-outline'
+          iconName='md-help-circle'
           onPress={() => this.setState({ selectedTab: 'InfoView' })}
         >
           <InfoView />
