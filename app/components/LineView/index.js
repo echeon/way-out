@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {
   Navigator
 } from 'react-native'
-
 import { colors, globals } from '../../styles'
 import LineSelect from './LineSelect'
 import DirectionSelect from './DirectionSelect'
@@ -19,7 +18,7 @@ export default class LineView extends Component{
       <Navigator
         style={globals.mainContainer}
         initialRoute={{ name: 'LineSelect' }}
-        configureScene={(route, routeStack) => Navigator.SceneConfigs.PushFromRight}
+        configureScene={(route, routeStack) => Navigator.SceneConfigs.FadeAndroid}
         renderScene={(route, navigator) => {
           switch(route.name){
             case 'LineSelect':

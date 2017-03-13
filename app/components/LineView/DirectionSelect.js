@@ -7,6 +7,9 @@ import {
 import { colors, globals } from '../../styles';
 import NavigationBar from '../shared/NavigationBar'
 import BackButton from '../shared/BackButton'
+import InstructionBar from '../shared/InstructionBar'
+
+import { List, ListItem } from 'react-native-elements'
 
 export default class DirectionSelect extends Component {
   constructor(){
@@ -26,24 +29,42 @@ export default class DirectionSelect extends Component {
   render(){
     const directions = ['Uptown', 'Downtown']
 
+    const list2 = [
+      {
+        title: 'Appointments',
+        icon: 'av-timer'
+      },
+      {
+        title: 'Trips',
+        icon: 'flight-takeoff'
+      },
+    ]
+
     return (
       <View style={globals.flexContainer}>
         <NavigationBar
           title='Direction'
           leftButton={<BackButton handlePress={this.goBack}/>}
         />
-      <View style={globals.flexContainer}>
-          {directions.map(direction => {
-            return (
-              <TouchableOpacity key={direction} onPress={this.visitStationSelect} style={globals.flexCenter}>
-                <Text style={globals.h2}>
-                  {direction}
-                </Text>
-              </TouchableOpacity>
-            )
-          })}
-        </View>
+        <InstructionBar prompt='Select the train' />
+        <List>
+          {
+            list2.map((item, i) => (
+              <ListItem
+                rightTitle="right title"
+                subtitle="subtitle"
+                onPress={this.visitStationSelect}
+                key={i}
+                title={item.title}
+                leftIcon={{name: item.icon}}
+                />
+            ))
+          }
+        </List>
       </View>
+
+
+
     )
   }
 }

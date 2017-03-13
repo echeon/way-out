@@ -45,6 +45,17 @@ export default [
     ],
   },
   {
+    name: 'BMT Canarsie Line',
+    color: colors.subwayLightGray,
+    textColor: '#FFFFFF',
+    trains: [
+      {
+        name: 'L',
+        color: colors.subwayLightGray,
+      },
+    ],
+  },
+  {
     name: 'IRT Lexington Avenue Line',
     color: colors.subwayGreen,
     textColor: '#FFFFFF',
@@ -91,6 +102,17 @@ export default [
     ],
   },
   {
+    name: 'IND Crosstown Line',
+    color: colors.subwayLightGreen,
+    textColor: '#FFFFFF',
+    trains: [
+      {
+        name: 'G',
+        color: colors.subwayLightGreen,
+      },
+    ],
+  },
+  {
     name: 'IND Sixth Avenue Line',
     color: colors.subwayOrange,
     textColor: '#FFFFFF',
@@ -114,43 +136,6 @@ export default [
     ],
   },
   {
-    name: 'IND Crosstown Line',
-    color: colors.subwayLightGreen,
-    textColor: '#FFFFFF',
-    trains: [
-      {
-        name: 'G',
-        color: colors.subwayLightGreen,
-      },
-    ],
-  },
-  {
-    name: 'BMT Canarsie Line',
-    color: colors.subwayLightGray,
-    textColor: '#FFFFFF',
-    trains: [
-      {
-        name: 'L',
-        color: colors.subwayLightGray,
-      },
-    ],
-  },
-  {
-    name: 'BMT Nassau Street Line',
-    color: colors.subwayBrown,
-    textColor: '#FFFFFF',
-    trains: [
-      {
-        name: 'J',
-        color: colors.subwayBrown,
-      },
-      {
-        name: 'Z',
-        color: colors.subwayBrown,
-      },
-    ],
-  },
-  {
     name: 'BMT Broadway Line',
     color: colors.subwayYellow,
     textColor: '#000000',
@@ -170,6 +155,21 @@ export default [
       {
         name: 'W',
         color: colors.subwayYellow,
+      },
+    ],
+  },
+  {
+    name: 'BMT Nassau Street Line',
+    color: colors.subwayBrown,
+    textColor: '#FFFFFF',
+    trains: [
+      {
+        name: 'J',
+        color: colors.subwayBrown,
+      },
+      {
+        name: 'Z',
+        color: colors.subwayBrown,
       },
     ],
   },

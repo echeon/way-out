@@ -49,9 +49,9 @@ export default class LineSelect extends Component{
       <View style={globals.flexContainer}>
         <NavigationBar title='Line' />
         <InstructionBar prompt='Select the train' />
-        <View style={[globals.flex, globals.row]}>
+        <View style={[globals.flex, globals.row, {paddingHorizontal: 20}]}>
           <ScrollView
-            contentContainerStyle={[globals.row, {flexWrap: 'wrap'}]}
+            contentContainerStyle={[globals.row, {alignSelf: 'center', flexWrap: 'wrap'}]}
             automaticallyAdjustContentInsets={false}>
             {lines.map(line => {
               return (
