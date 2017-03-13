@@ -1,6 +1,6 @@
-export const groupBy = (xs, key) => {
-  return xs.reduce(function(rv, x) {
-    (rv[x[key]] = rv[x[key]] || []).push(x);
-    return rv;
+export const groupBy = (list, key) => {
+  return list.reduce((acc, item) => {
+    (acc[item[key]] = acc[item[key]] || []).push(item);
+    return acc;
   }, {});
 };
