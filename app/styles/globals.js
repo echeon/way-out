@@ -78,6 +78,7 @@ export const globals = StyleSheet.create({
   },
   flexContainer: {
     flex: 1,
+    backgroundColor: colors.white,
   },
   row: {
     flexDirection: 'row',

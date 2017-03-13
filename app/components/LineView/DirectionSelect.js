@@ -28,18 +28,7 @@ export default class DirectionSelect extends Component {
 
   render(){
     const directions = ['Uptown', 'Downtown']
-
-    const list2 = [
-      {
-        title: 'Appointments',
-        icon: 'av-timer'
-      },
-      {
-        title: 'Trips',
-        icon: 'flight-takeoff'
-      },
-    ]
-
+    
     return (
       <View style={globals.flexContainer}>
         <NavigationBar
@@ -49,15 +38,12 @@ export default class DirectionSelect extends Component {
         <InstructionBar prompt='Select the train' />
         <List>
           {
-            list2.map((item, i) => (
+            directions.map((d, i) => (
               <ListItem
-                rightTitle="right title"
-                subtitle="subtitle"
                 onPress={this.visitStationSelect}
                 key={i}
-                title={item.title}
-                leftIcon={{name: item.icon}}
-                />
+                title={d}
+              />
             ))
           }
         </List>

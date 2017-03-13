@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { TabBarIOS } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons';
-import { globals } from '../styles'
+import { colors, globals } from '../styles'
 import InfoView from './InfoView'
 import LineView from './LineView'
 
@@ -17,7 +17,10 @@ export default class Landing extends Component {
 
   render() {
     return (
-      <TabBarIOS>
+      <TabBarIOS
+        barTintColor='#EEEEEE'
+        translucent={false}
+      >
         <Icon.TabBarItemIOS
           title=''
           selected={this.state.selectedTab === 'LineView'}
