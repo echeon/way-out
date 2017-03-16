@@ -37,13 +37,13 @@ export default class StationSelect extends Component {
 
   renderRow(station, sectionId) {
     return (
-      <View style={[{borderLeftWidth: 10, borderLeftColor: 'red'}]}>
+      <View style={[{borderLeftWidth: 10, borderLeftColor: colors.subwayRed}]}>
         <ListItem
           onPress={this.visitResult}
           underlayColor='yellow'
           key={sectionId}
           title={station.name}
-          subtitle={'/ ' + station.crossStreet}
+          subtitle={'& ' + station.crossStreet}
         />
       </View>
     )

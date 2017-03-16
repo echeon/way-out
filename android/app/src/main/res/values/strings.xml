@@ -1,3 +1,4 @@
 <resources>
+    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">mPgJXajtK7tKU_lNowjrOnXoVcwkVyQjEO7PG</string>
     <string name="app_name">WayOut</string>
 </resources>
