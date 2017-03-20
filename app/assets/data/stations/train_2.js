@@ -198,7 +198,7 @@ const stations = [
     crossStreet: 'Broadway',
     accessibility: true,
     closed: false,
-    subwayTransfers: ['1F', '2F']
+    subwayTransfers: ['1F', '3F']
   },
   {
     name: '86 Street',
