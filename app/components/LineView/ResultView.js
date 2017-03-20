@@ -25,8 +25,13 @@ export default class Result extends Component {
           title='Result'
           leftButton={<BackButton handlePress={this.goBack}/>}
         />
-        <View style={globals.flexCenter}>
-          <Text>HELLO THIS IS THE RESULT PAGE!!!</Text>
+        <View style={[globals.flex, {flexDirection: 'row'}]}>
+          <View style={{flex: 1, backgroundColor: '#EEE'}}>
+          </View>
+          <View style={{backgroundColor: 'yellow', width: 60}}>
+          </View>
+          <View style={{backgroundColor: 'black', width: 120}}>
+          </View>
         </View>
       </View>
     )

@@ -28,7 +28,7 @@ export default class DirectionSelect extends Component {
 
   render(){
     const directions = ['Uptown', 'Downtown']
-    
+
     return (
       <View style={globals.flexContainer}>
         <NavigationBar
@@ -48,9 +48,6 @@ export default class DirectionSelect extends Component {
           }
         </List>
       </View>
-
-
-
     )
   }
 }

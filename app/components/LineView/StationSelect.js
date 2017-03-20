@@ -11,7 +11,7 @@ import NavigationBar from '../shared/NavigationBar';
 import BackButton from '../shared/BackButton';
 import InstructionBar from '../shared/InstructionBar';
 import { List, ListItem } from 'react-native-elements';
-import stations from './stations';
+import stations from '../../assets/data/stations/train_1';
 import { groupBy } from '../shared/helpers';
 
 export default class StationSelect extends Component {
@@ -32,7 +32,7 @@ export default class StationSelect extends Component {
   }
 
   visitResult() {
-    this.props.navigator.push({ name: 'ResultView' })
+    this.props.navigator.push({ name: 'PlanSelect' })
   }
 
   renderRow(station, sectionId) {
