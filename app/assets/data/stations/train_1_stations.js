@@ -308,4 +308,4 @@ const stations = [
   },
 ]
 
-export default stations
+export default stations;

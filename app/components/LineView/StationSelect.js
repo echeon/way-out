@@ -11,7 +11,7 @@ import NavigationBar from '../shared/NavigationBar';
 import BackButton from '../shared/BackButton';
 import InstructionBar from '../shared/InstructionBar';
 import { List, ListItem } from 'react-native-elements';
-import stations from '../../assets/data/stations/train_1';
+import stations from '../../assets/data/stations/train_1_stations';
 import { groupBy } from '../shared/helpers';
 
 export default class StationSelect extends Component {

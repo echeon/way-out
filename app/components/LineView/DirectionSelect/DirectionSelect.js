@@ -4,12 +4,11 @@ import {
   Text,
   TouchableOpacity,
  } from 'react-native';
-import { colors, globals } from '../../styles';
-import NavigationBar from '../shared/NavigationBar'
-import BackButton from '../shared/BackButton'
-import InstructionBar from '../shared/InstructionBar'
-
-import { List, ListItem } from 'react-native-elements'
+import { colors, globals } from '../../../styles';
+import NavigationBar from '../../shared/NavigationBar';
+import BackButton from '../../shared/BackButton';
+import InstructionBar from '../../shared/InstructionBar';
+import { List, ListItem } from 'react-native-elements';
 
 export default class DirectionSelect extends Component {
   constructor(){
@@ -27,7 +26,7 @@ export default class DirectionSelect extends Component {
   }
 
   render(){
-    const directions = ['Uptown', 'Downtown']
+    const directions = this.props.data.find(x => x.name === this.props.selectedTrain).directions;
 
     return (
       <View style={globals.flexContainer}>
