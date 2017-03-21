@@ -8,7 +8,7 @@ console.disableYellowBox = true;
 
 export default class App extends Component {
   render() {
-    const store = configureStore({data})
+    const store = configureStore({data});
 
     return (
       <Provider store={store}>
