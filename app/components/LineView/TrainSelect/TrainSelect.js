@@ -6,21 +6,28 @@ import {
   Text,
   TouchableOpacity,
  } from 'react-native'
-
 import Icon from 'react-native-vector-icons/Ionicons'
-import { colors, globals, subwaySymbols } from '../../styles'
-import lines from '../../data/trains'
-import NavigationBar from '../shared/NavigationBar'
-import InstructionBar from '../shared/InstructionBar'
+import { colors, globals, subwaySymbols } from '../../../styles'
+import lines from '../../../data/trains'
+import NavigationBar from '../../shared/NavigationBar'
+import InstructionBar from '../../shared/InstructionBar';
 
-export default class LineSelect extends Component{
+export default class TrainSelect extends Component{
   constructor(){
     super();
-    this.visitDirectionSelect = this.visitDirectionSelect.bind(this)
+    this.visitDirectionSelect = this.visitDirectionSelect.bind(this);
+    this.handlePress = this.handlePress.bind(this);
   }
 
   visitDirectionSelect() {
     this.props.navigator.push({ name: 'DirectionSelect' })
+  }
+
+  handlePress(train) {
+    return e => {
+      this.props.selectTrain(train);
+      this.visitDirectionSelect();
+    }
   }
 
   render() {
@@ -38,7 +45,7 @@ export default class LineSelect extends Component{
 
     const SubwaySymbol = ({name, color, textColor}) => (
       <TouchableOpacity
-        onPress={this.visitDirectionSelect}
+        onPress={this.handlePress('hello')}
         style={[subwaySymbols.button, {backgroundColor: color}]}
       >
         <Text style={[subwaySymbols.text, {color: textColor}]}>{name}</Text>
@@ -47,7 +54,7 @@ export default class LineSelect extends Component{
 
     return (
       <View style={globals.flexContainer}>
-        <NavigationBar title='Line' />
+        <NavigationBar title='Train' />
         <InstructionBar prompt='Select the train' />
         <View style={[globals.flex, globals.row, {paddingHorizontal: 20}]}>
           <ScrollView
