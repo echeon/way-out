@@ -11,10 +11,11 @@ import InstructionBar from '../../shared/InstructionBar';
 import { List, ListItem } from 'react-native-elements';
 
 export default class DirectionSelect extends Component {
-  constructor(){
-    super();
-    this.goBack = this.goBack.bind(this)
-    this.visitStationSelect = this.visitStationSelect.bind(this)
+  constructor(props){
+    super(props);
+    this.goBack = this.goBack.bind(this);
+    this.visitStationSelect = this.visitStationSelect.bind(this);
+    this.handlePress = this.handlePress.bind(this);
   }
 
   goBack(){
@@ -25,8 +26,15 @@ export default class DirectionSelect extends Component {
     this.props.navigator.push({ name: 'StationSelect' })
   }
 
+  handlePress(direction) {
+    return e => {
+      this.props.selectDirection(direction);
+      this.visitStationSelect();
+    }
+  }
+
   render(){
-    const directions = this.props.data.find(x => x.name === this.props.selectedTrain).directions;
+    const { directions } = this.props;
 
     return (
       <View style={globals.flexContainer}>
@@ -39,7 +47,7 @@ export default class DirectionSelect extends Component {
           {
             directions.map((d, i) => (
               <ListItem
-                onPress={this.visitStationSelect}
+                onPress={this.handlePress(d)}
                 key={i}
                 title={d}
               />

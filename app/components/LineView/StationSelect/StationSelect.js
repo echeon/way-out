@@ -6,25 +6,21 @@ import {
   ListView,
   ScrollView,
  } from 'react-native';
-import { colors, globals } from '../../styles';
-import NavigationBar from '../shared/NavigationBar';
-import BackButton from '../shared/BackButton';
-import InstructionBar from '../shared/InstructionBar';
+import { colors, globals } from '../../../styles';
+import NavigationBar from '../../shared/NavigationBar';
+import BackButton from '../../shared/BackButton';
+import InstructionBar from '../../shared/InstructionBar';
 import { List, ListItem } from 'react-native-elements';
-import stations from '../../assets/data/stations/train_1_stations';
-import { groupBy } from '../shared/helpers';
+import { groupBy } from '../../shared/helpers';
 
 export default class StationSelect extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
-    // this.state = {
-    //   dataSource: ds.cloneWithRows(stations),
-    // };
     this.goBack = this.goBack.bind(this)
     this.visitResult = this.visitResult.bind(this)
     this.renderRow = this.renderRow.bind(this)
-    this.stations = groupBy(stations, 'borough')
+    this.stations = groupBy(props.stations, 'borough')
   }
 
   goBack() {

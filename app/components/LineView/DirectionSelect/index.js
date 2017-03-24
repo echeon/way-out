@@ -1,14 +1,16 @@
 import { connect } from 'react-redux';
-import { selectTrain } from '../../../actions/Actions';
+import { selectDirection } from '../../../actions/Actions';
 import DirectionSelect from './DirectionSelect';
 
-const mapStateToProps = state => ({
-  data: state.data,
-  selectedTrain: state.selectedTrain,
-})
+const mapStateToProps = state => {
+  const directions = state.data.find(x => x.name === state.selectedTrain).directions;
+  return {
+    directions,
+  }
+}
 
 const mapDispatchToProps = dispatch => ({
-  // selectTrain: train => dispatch(selectTrain(train))
+  selectDirection: direction => dispatch(selectDirection(direction))
 })
 
 export default connect(

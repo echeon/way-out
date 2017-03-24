@@ -13,8 +13,8 @@ import NavigationBar from '../../shared/NavigationBar';
 import InstructionBar from '../../shared/InstructionBar';
 
 export default class TrainSelect extends Component{
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.visitDirectionSelect = this.visitDirectionSelect.bind(this);
     this.handlePress = this.handlePress.bind(this);
   }
